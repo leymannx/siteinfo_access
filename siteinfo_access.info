@@ -1,0 +1,4 @@
+name = Siteinfo Access
+description = Let authenticated users change the site name and slogan.
+core = 7.x
+package = Custom

@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Module file for Siteinfo Access.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function siteinfo_access_menu() {
+  $items['admin/config/system/siteinfo_access'] = array(
+    'title' 						=> t('Siteinfo Access'),
+    'description' 			=> 'Set a site name and slogan',
+    'page callback' 		=> 'drupal_get_form',
+    'page arguments'   	=> array('siteinfo_access_settings'),
+    'access arguments'	=> array('administer siteinfo access'),
+    'file'              => 'siteinfo_access.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function siteinfo_access_permission() {
+  return array(
+    'administer siteinfo access' => array(
+      'title'       => t('Administer Siteinfo Access'),
+      'description' => t('Set a new site logo.'),
+    ),
+  );
+}

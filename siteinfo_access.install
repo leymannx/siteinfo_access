@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install file for Siteinfo Access.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function siteinfo_access_install() {
+//  $rid = user_role_load_by_name('administrator')->rid;
+//  user_role_grant_permissions($rid, array('administer logo access'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('administer siteinfo access'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access administration pages'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('view the administration theme'));
+}
